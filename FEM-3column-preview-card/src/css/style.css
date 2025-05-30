@@ -1,0 +1,26 @@
+@layer variables {
+    :root {
+        /* Primary */
+        --clr-orange: hsl(31, 77%, 52%);
+        --clr-cyan: hsl(184, 100%, 22%);
+        --clr-dark-cyan: hsl(179, 100%, 13%);
+
+        /* Neutral */
+        --clr-neutral-tr-white: hsla(0, 0%, 100%, 0.75);
+        --clr-neutral-gray: hsl(0, 0%, 95%);
+    }
+}
+
+@layer reset {
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        font-size: 0.9375rem; /* 15px */
+    }
+}
