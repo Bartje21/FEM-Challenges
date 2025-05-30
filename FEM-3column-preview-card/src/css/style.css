@@ -17,7 +17,11 @@
         --fw-400: 400;
         --fw-700: 700;
 
-        
+        /* layout */
+        --padding: 1.5rem;
+
+        --max-width: 900px;
+
     }
 }
 
@@ -33,4 +37,43 @@
     html {
         font-size: 0.9375rem; /* 15px */
     }
+
+    body {
+        height: 100vh;
+        padding-block: calc(var(--padding) * 3);
+    }
+
+    main {
+
+    }
+
+
+}
+
+@layer layout {
+    .content-grid
+
+    .card-grid
+
+}
+
+@layer components {
+    .card
+
+    .card-sedan
+
+    .card-suv
+
+    .card-luxury
+
+    .card__icon
+
+    .card__title
+
+    .card__text
+
+    .card__btn
+
+    .btn
+
 }
