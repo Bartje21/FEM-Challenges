@@ -8,6 +8,16 @@
         /* Neutral */
         --clr-neutral-tr-white: hsla(0, 0%, 100%, 0.75);
         --clr-neutral-gray: hsl(0, 0%, 95%);
+
+        /* fonts */
+        --ff-big-shoulders: "Big Shoulders Display", sans-serif;
+        --ff-lexend-deca: "Lexend Deca", sans-serif;
+
+        /* font weights */
+        --fw-400: 400;
+        --fw-700: 700;
+
+        
     }
 }
 
