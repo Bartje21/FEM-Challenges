@@ -10,7 +10,7 @@
         --clr-neutral-gray: hsl(0, 0%, 95%);
 
         /* fonts */
-        --ff-big-shoulders: "Big Shoulders Display", sans-serif;
+        --ff-big-shoulders: "Big Shoulders", sans-serif;
         --ff-lexend-deca: "Lexend Deca", sans-serif;
 
         /* font weights */
@@ -41,39 +41,89 @@
     body {
         height: 100vh;
         padding-block: calc(var(--padding) * 3);
+        background-color: var(--clr-neutral-gray);
+        color: var(--clr-neutral-gray);
     }
 
     main {
 
     }
 
+    h2 {
+        font-family: var(--ff-big-shoulders);
+        font-weight: var(--fw-700);
+        line-height: 1.2;
+        text-transform: uppercase;
+    }
 
+    p {
+        font-family: var(--ff-lexend-deca);
+        font-weight: var(--fw-400);
+        line-height: 1.5;
+    }
 }
 
 @layer layout {
-    .content-grid
+    .content-grid {
+        --_grid-padding: var(--padding);
+        --_max-width: var(--max-width);
 
-    .card-grid
+        display: grid;
+        grid-template-columns: 
+            var(--_grid-padding)
+            1fr
+            minmax(0, var(--_max-width))
+            1fr
+            var(--_grid-padding);
+        
+        & > * {
+            grid-column: 3;
+        }
+    }
+
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));   
+        border-radius: 0.35rem;
+        overflow: clip;
+    }
 
 }
 
 @layer components {
-    .card
+    .card {
+        --_card-bg: var(--clr-orange);
 
-    .card-sedan
+        background-color: var(--_card-bg);
+        padding: 2.5rem;
+    }
 
-    .card-suv
+    .card-sedan {
+        --_card-bg: var(--clr-orange);
+    }
 
-    .card-luxury
+    .card-suv {
+        --_card-bg: var(--clr-cyan);
+    }
+
+    .card-luxury {
+        --_card-bg: var(--clr-dark-cyan);
+    }
 
     .card__icon
 
-    .card__title
+    .card__title {
+        text-transform: uppercase;
+    }
 
     .card__text
 
-    .card__btn
-
-    .btn
-
+    .card__btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--clr-neutral-gray);
+        padding: 0.75rem 1.5rem;
+        border-radius: 100%;
+    }
 }
