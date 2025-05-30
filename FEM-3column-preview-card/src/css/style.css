@@ -40,7 +40,7 @@
 
     body {
         height: 100vh;
-        padding-block: calc(var(--padding) * 3);
+        padding-block: calc(var(--padding) * 2.5);
         background-color: var(--clr-neutral-gray);
         color: var(--clr-neutral-gray);
     }
@@ -48,6 +48,8 @@
     main {
 
     }
+
+
 
     h2 {
         font-family: var(--ff-big-shoulders);
@@ -75,6 +77,9 @@
             minmax(0, var(--_max-width))
             1fr
             var(--_grid-padding);
+
+        place-items: center;
+        height: 100%;
         
         & > * {
             grid-column: 3;
@@ -83,11 +88,17 @@
 
     .card-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));   
+        grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));   
         border-radius: 0.35rem;
         overflow: clip;
+        place-items: center;
     }
 
+    .flow {
+        & > * + * {
+            margin-top: calc(1em + 1ch);
+        }
+    }
 }
 
 @layer components {
@@ -110,20 +121,40 @@
         --_card-bg: var(--clr-dark-cyan);
     }
 
-    .card__icon
+    .card__icon {
+
+    }
 
     .card__title {
         text-transform: uppercase;
     }
 
-    .card__text
+    .card__text {
+
+    }
 
     .card__btn {
+        cursor: pointer;
+
         display: inline-flex;
         align-items: center;
         justify-content: center;
+
+        font-family: var(--ff-lexend-deca);
+        text-decoration: none;
+
         background-color: var(--clr-neutral-gray);
-        padding: 0.75rem 1.5rem;
-        border-radius: 100%;
+        color: var(--_card-bg);
+
+        padding: 0.85rem 1.75rem;
+        border-radius: 100rem;
+        border: 2px solid var(--clr-neutral-gray);
+        
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background-color: transparent;
+            color: var(--clr-neutral-gray);
+        }
     }
 }
