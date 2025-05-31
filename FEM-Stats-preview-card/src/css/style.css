@@ -117,7 +117,19 @@
     .preview-card {
         display: grid;
         grid-template-columns: 1fr;
-        place-items: center;
-        
+        place-items: center stretch;
+    }
+
+    .card-image {
+        background-image: 
+            url('/FEM-Stats-preview-card/images/image-header-mobile.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom;
+        aspect-ratio: 1;
+        overflow: clip;
+        width: 100%;
+        max-width: 100%;
+        height: 25vh;
     }
 }
