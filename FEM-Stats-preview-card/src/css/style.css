@@ -43,8 +43,6 @@
         max-width: 100%;
         display: block;
     }
-
-
 }
 
 @layer utilities {
@@ -61,8 +59,12 @@
     .text-primary-800 { color: var(--clr-primary-800); }
     .text-secondary-400 { color: var(--clr-secondary-400); }
     .text-white { color: var(--clr-white); }
-    .text-white-75 { color: var(--clr-white-tr75); }
-    .text-white-60 { color: var(--clr-white-tr60); }
+    .text-white-75 { color: var(--clr-white-75); }
+    .text-white-60 { color: var(--clr-white-60); }
+
+    /* fonts families */
+    .ff-lexend-deca { font-family: var(--ff-lexend-deca); }
+    .ff-inter { font-family: var(--ff-inter); }
 
     /* Font Weight Classes */
     .fw-400 { font-weight: var(--fw-400); }
@@ -70,6 +72,7 @@
 
     .uppercase { text-transform: uppercase; }
     .text-center { text-align: center; }
+
     
     .visually-hidden {
         position: absolute;
@@ -107,5 +110,14 @@
         & > * {
             grid-column: 3;
         }
+    }
+}
+
+@layer components {
+    .preview-card {
+        display: grid;
+        grid-template-columns: 1fr;
+        place-items: center;
+        
     }
 }
