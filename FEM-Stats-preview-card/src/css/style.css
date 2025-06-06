@@ -20,6 +20,9 @@
 
         /* Font sizes */
         --fs-base: 0.9375rem; /* 15px */
+
+        /* layout */
+        --padding: 1.5rem;
     }
 }
 
@@ -37,11 +40,26 @@
         font-size: var(--fs-base);
     }
 
+    main {
+        margin-top: 4.5rem;;
+    }
+
     img,
     picture,
     video {
         max-width: 100%;
         display: block;
+    }
+
+    h1, h2, h3 {
+        font-weight: var(--fw-700);
+        line-height: 1.2;
+    }
+
+    p {
+        text-align: center;
+        line-height: 1.5;
+        text-wrap: pretty;
     }
 }
 
@@ -97,7 +115,7 @@
 
 @layer layout {
     .content-grid {
-        --_grid-padding: 1.5rem;
+        --_grid-padding: var(--padding);
 
         display: grid;
         grid-template-columns: 
@@ -111,6 +129,12 @@
             grid-column: 3;
         }
     }
+
+    .flow {
+        & > * + * {
+            margin-top: 1em;
+        }
+    }
 }
 
 @layer components {
@@ -118,6 +142,14 @@
         display: grid;
         grid-template-columns: 1fr;
         place-items: center stretch;
+        border-radius: 0.5rem;
+        overflow: hidden;;
+    }
+
+    .overlay {
+        --_clr-overlay: hsla(277, 60%, 37%, 0.6);
+        
+        border-image: fill 1 linear-gradient(var(--_clr-overlay), var(--_clr-overlay)); );
     }
 
     .card-image {
@@ -125,11 +157,45 @@
             url('/FEM-Stats-preview-card/images/image-header-mobile.jpg');
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: bottom;
+        background-position: center;
         aspect-ratio: 1;
         overflow: clip;
         width: 100%;
         max-width: 100%;
-        height: 25vh;
+        height: 30vh;
+    }
+
+    .card-content {
+        padding: var(--padding);
+    }
+
+    .card-text {
+
+    }
+
+    .card-title {
+
+    }
+
+    .card-stats {
+        margin-block-start: 2em
+    }
+
+    .stats-item {
+
+    }
+
+    .stats-value {
+
+    }
+
+    .stats-type {
+
+    }
+}
+
+@layer media-queries {
+    @media screen and (width >= 450px) {
+
     }
 }
