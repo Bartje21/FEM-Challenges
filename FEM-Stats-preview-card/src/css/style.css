@@ -151,7 +151,7 @@
     .overlay {
         --_clr-overlay: hsla(277, 60%, 37%, 0.6);
         
-        border-image: fill 1 linear-gradient(var(--_clr-overlay), var(--_clr-overlay)); );
+        border-image: fill 1 linear-gradient(var(--_clr-overlay), var(--_clr-overlay));
     }
 
     .card-image {
@@ -170,14 +170,6 @@
     .card-content {
         padding: 2rem var(--padding);
     }
-
-    .card-text {
-    }
-
-    .card-title {
-
-    }
-
     .card-stats {
         margin-block-start: 2em;
     }
