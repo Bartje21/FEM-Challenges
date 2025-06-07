@@ -22,7 +22,7 @@
         --fs-base: 0.9375rem; /* 15px */
 
         /* layout */
-        --padding: 1.5rem;
+        --padding: 2rem;
     }
 }
 
@@ -41,13 +41,13 @@
     }
 
     main {
-        margin-top: 4.5rem;;
+        margin-block: 4.5rem;
     }
 
     img,
     picture,
     video {
-        max-width: 100%;
+        max-inline-size: 100%;
         display: block;
     }
 
@@ -124,6 +124,7 @@
             minmax(0, 1200px)
             1fr
             var(--_grid-padding);
+        place-items: center;
 
         & > * {
             grid-column: 3;
@@ -140,6 +141,7 @@
 @layer components {
     .preview-card {
         display: grid;
+        max-inline-size: 28rem; /* 347px */
         grid-template-columns: 1fr;
         place-items: center stretch;
         border-radius: 0.5rem;
@@ -166,11 +168,10 @@
     }
 
     .card-content {
-        padding: var(--padding);
+        padding: 2rem var(--padding);
     }
 
     .card-text {
-
     }
 
     .card-title {
@@ -178,24 +179,72 @@
     }
 
     .card-stats {
-        margin-block-start: 2em
+        margin-block-start: 2em;
     }
 
     .stats-item {
-
+        gap: 0.2rem;
     }
 
     .stats-value {
-
+        order: -1;
+        font-size: 1.5rem;
     }
 
     .stats-type {
-
+        font-size: 0.8rem;
+        letter-spacing: 0.1ch;
+        font-weight: 300;
     }
 }
 
 @layer media-queries {
-    @media screen and (width >= 450px) {
+    @media screen and (width >= 750px) {
+        
+        .preview-card {
+            max-inline-size: 49.3rem; /* 788px */
+            text-align: left;
+            grid-template-columns: repeat(2, 1fr);
+        }
 
+        .card-image {
+            order: 2;
+            background-image: 
+                url('/FEM-Stats-preview-card/images/image-header-desktop.jpg');
+            height: 100%;
+            aspect-ratio: 1; 
+        }
+
+        .card-content {
+             height: 100%;
+             display: flex;
+             flex-direction: column;
+             justify-content: space-around;
+        }
+
+        .card-title {
+            font-size: 2rem;
+            text-align: left;
+        }
+
+        .card-text {
+            text-align: left;
+        }
+
+        .card-stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(100px, 1fr));
+            column-gap: 1rem;
+            place-items: left center;
+        }
+
+        .stats-item {
+            margin-block-start: 0;
+            text-align: left;
+        }
+
+        .stats-value {
+            text-align: left;
+        }
     }
 }
